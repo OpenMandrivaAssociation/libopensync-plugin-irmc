@@ -11,6 +11,7 @@ Group:		Office
 URL:		http://www.opensync.org
 Source:		svn://svn.opensync.org/plugins/syncml/%{name}-%{version}.tar.bz2
 BuildRequires:	opensync-devel >= %{version}
+BuildRequires:	openobex-devel
 BuildRoot:	    %{_tmppath}/%{name}-%{version}
 
 %description
