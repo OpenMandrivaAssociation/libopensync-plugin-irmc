@@ -36,6 +36,6 @@ rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS README
 %{_libdir}/opensync/plugins/*
 %{_datadir}/opensync/defaults/*
