@@ -23,7 +23,7 @@ Sony Ericsson phones.
 %setup -q
 
 %build
-scons prefix=%{_prefix}
+scons prefix=%{_prefix} libsuffix=%{_lib}
 
 %install
 rm -rf %{buildroot}
