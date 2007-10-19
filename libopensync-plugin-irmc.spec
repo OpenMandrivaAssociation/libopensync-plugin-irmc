@@ -12,6 +12,7 @@ URL:		http://www.opensync.org
 Source:		http://www.opensync.org/download/releases/%{version}/%{name}-%{version}.tar.bz2
 BuildRequires:	opensync-devel >= %{version}
 BuildRequires:	openobex-devel
+BuildRequires:	scons
 BuildRoot:	    %{_tmppath}/%{name}-%{version}
 
 %description
@@ -22,12 +23,11 @@ Sony Ericsson phones.
 %setup -q
 
 %build
-%configure2_5x
-%make
-										
+scons prefix=%{_prefix}
+
 %install
 rm -rf %{buildroot}
-%makeinstall_std
+scons install DESTDIR=%{buildroot}
 
 %find_lang %name
 
