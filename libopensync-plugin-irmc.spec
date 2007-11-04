@@ -25,6 +25,9 @@ Sony Ericsson phones.
 %patch0 -p0
 
 %build
+export CFLAGS="%{optflags} -fPIC"
+export CXXFLAGS="%{optflags} -fPIC"
+export FFLAGS="%{optflags} -fPIC"
 %cmake
 %make
 
