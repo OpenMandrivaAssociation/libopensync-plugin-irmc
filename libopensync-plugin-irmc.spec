@@ -1,18 +1,18 @@
 %define name	libopensync-plugin-irmc
-%define version	0.33
+%define version	0.34
 %define release %mkrel 1
 
 Name: 	 	%{name}
 Version: 	%{version}
 Release: 	%{release}
 Summary: 	IRMC plugin for opensync synchronization tool
-License:	GPL
+License:	GPLv2+
 Group:		Office
 URL:		http://www.opensync.org
 Source:		http://www.opensync.org/download/releases/%{version}/%{name}-%{version}.tar.bz2
 BuildRequires:	opensync-devel >= %{version}
 BuildRequires:	openobex-devel
-BuildRequires:	scons
+BuildRequires:	cmake
 BuildRoot:	    %{_tmppath}/%{name}-%{version}
 
 %description
@@ -23,11 +23,14 @@ Sony Ericsson phones.
 %setup -q
 
 %build
-scons prefix=%{_prefix} libsuffix=%{_lib}
+%cmake
+%make
 
 %install
 rm -rf %{buildroot}
-scons install DESTDIR=%{buildroot}
+cd build
+%makeinstall_std
+cd -
 
 %find_lang %name
 
