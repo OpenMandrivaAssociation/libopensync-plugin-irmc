@@ -10,6 +10,7 @@ License:	GPLv2+
 Group:		Office
 URL:		http://www.opensync.org
 Source:		http://www.opensync.org/download/releases/%{version}/%{name}-%{version}.tar.bz2
+Patch0:		libopensync-plugin-irmc-0.34-find-libxml2.patch
 BuildRequires:	opensync-devel >= %{version}
 BuildRequires:	openobex-devel
 BuildRequires:	cmake
@@ -21,6 +22,7 @@ Sony Ericsson phones.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %cmake
