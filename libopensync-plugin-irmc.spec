@@ -1,6 +1,6 @@
 %define name	libopensync-plugin-irmc
 %define version	0.34
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: 	 	%{name}
 Version: 	%{version}
