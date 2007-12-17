@@ -14,7 +14,6 @@ Patch0:		libopensync-plugin-irmc-0.34-find-libxml2.patch
 BuildRequires:	opensync-devel >= %{version}
 BuildRequires:	openobex-devel
 BuildRequires:	cmake
-BuildRoot:	    %{_tmppath}/%{name}-%{version}
 
 %description
 This plugin allows applications using OpenSync to synchronise to and from
