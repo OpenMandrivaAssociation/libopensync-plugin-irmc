@@ -1,6 +1,6 @@
 %define name	libopensync-plugin-irmc
-%define version	0.34
-%define release %mkrel 2
+%define version	0.35
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Version: 	%{version}
@@ -10,7 +10,6 @@ License:	GPLv2+
 Group:		Office
 URL:		http://www.opensync.org
 Source:		http://www.opensync.org/download/releases/%{version}/%{name}-%{version}.tar.bz2
-Patch0:		libopensync-plugin-irmc-0.34-find-libxml2.patch
 BuildRequires:	opensync-devel >= %{version}
 BuildRequires:	openobex-devel
 BuildRequires:	cmake
@@ -22,7 +21,6 @@ Sony Ericsson phones.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
 export CFLAGS="%{optflags} -fPIC"
@@ -45,5 +43,5 @@ rm -rf %{buildroot}
 %files -f %{name}.lang
 %defattr(-,root,root)
 %doc AUTHORS README
-%{_libdir}/opensync/plugins/*
-%{_datadir}/opensync/defaults/*
+%{_libdir}/opensync-1.0/plugins/*
+%{_datadir}/opensync-1.0/defaults/*
