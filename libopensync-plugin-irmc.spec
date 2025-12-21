@@ -7,6 +7,11 @@ License:	GPLv2
 Group:		Office
 URL:		https://www.opensync.org
 Source:		http://www.opensync.org/download/releases/%{version}/%{name}-%{version}.tar.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	libopensync-devel < 0.30
 BuildRequires:	openobex-devel
 Requires:	libopensync >= %{epoch}:%{version}
